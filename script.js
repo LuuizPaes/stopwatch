@@ -13,6 +13,15 @@ const formatTime = (time) => {
   return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}:${hundredths.toString().padStart(2, "0")}:`;
 }
 
+const addMarkToList = (markIndex, markTime) => {
+    MarksList.innerHTML += `<p>Marck ${markIndex}: ${formatTime(markTime)}</p>`
+}
+
+const markTime = () => {
+    marks.push(timer)
+    addMarkToList(marks.length, timer)
+}
+
 const toggleTimer = () => {
   const button = document.querySelector(".power");
   const action = button.getAttribute("action");
@@ -32,8 +41,21 @@ const toggleTimer = () => {
   }
 }
 
+const resetTimer = () => {
+    clearInterval(intervalId)
+    timer = 0
+    marks = []
+    setTimer(timer)
+    MarksList.innerHTML = ""
+    const button = document.querySelector(".power")
+    button.setAttribute("action", "start");
+    button.innerHTML = '<i class="fa-solid fa-play"></i>'
+}
+
 const setTimer = (time) => {
   timerEl.innerText = formatTime(time);
 }
 
 document.querySelector(".power").addEventListener("click", toggleTimer);
+document.querySelector(".mark").addEventListener("click", markTime)
+document.querySelector(".reset").addEventListener("click", resetTimer)
