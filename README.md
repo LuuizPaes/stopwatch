@@ -1,7 +1,6 @@
 # Cronômetro
 
-Este é um cronômetro desenvolvido com HTML, CSS e JavaScript. Ele tem as funcionalidades de um cronômetro como iniciar, pausar, fazer a marcação e reiniciar. Projeto desenvolvido
-para praticar os conhecimentos em javaScript.
+Este é um cronômetro desenvolvido com HTML, CSS e JavaScript. Ele tem as funcionalidades de um cronômetro como iniciar, pausar, fazer a marcação e reiniciar. Projeto desenvolvido com foco em javaScript.
 
 ## Vizualize o projeto
 (https://luuizpaes.github.io/stopwatch/)
